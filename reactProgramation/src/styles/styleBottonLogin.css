@@ -1,0 +1,12 @@
+.btnIniciar{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    background-color: blue;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 8%;
+    cursor: pointer;
+}
