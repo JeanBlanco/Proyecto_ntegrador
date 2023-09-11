@@ -8,6 +8,7 @@ import image5 from "../assets/image5.png";
 import image6 from "../assets/image6.png";
 import image7 from "../assets/image7.png";
 import "../styles/RegistroUsuario.css";
+import Swal from "sweetalert2";
 
 const FormularioRegisterUsuario = () => {
   const [name, setName] = useState("");
@@ -17,7 +18,7 @@ const FormularioRegisterUsuario = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const registarse = async (e) => {
+  const registrarse = async (e) => {
     e.preventDefault();
     console.log("Nombre:", name);
     console.log("Apellido:", lastName);
@@ -41,7 +42,12 @@ const FormularioRegisterUsuario = () => {
         navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
+        if (err.response.status == 400){
+          Swal.fire("Información!", err.response.data.message, "Error");
+        }else{
+          Swal.fire("Información!", "Ocurrió un error!", "Error"); 
+        }
       });
   };
 
@@ -75,7 +81,7 @@ const FormularioRegisterUsuario = () => {
           </div>
           <div className="cardButton">  
             <img className="images" src={image7} alt="logo"/>
-            <ButtonRegisterUsuario fnRegistarse={registarse} label="Registrarse" />
+            <ButtonRegisterUsuario fnRegistrarse={registrarse} label="Registrarse" />
             <img className="images" src={image6} alt="logo"/>
           </div>
       </div>  
