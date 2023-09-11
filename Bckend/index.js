@@ -1,8 +1,13 @@
 const express = require ('express')
 const mongoose = require ('mongoose')
 require('dotenv').config()
+const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const app = express();
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+app.use(cors());
 
 // Constante del puerto del servidor 
 const PORT = process.env.PORT || 3000;
