@@ -52,7 +52,7 @@ function FormularioLogIn() {
             </div>
             <div className="cardForm">
                 <div className="input_user">
-                    <h2>E-mail</h2>
+                    <h2>Usuario</h2>
                     <input className="inputs" type="text" placeholder="Ingresa tu E-mail"
                     onChange={(e)=> {setUsuario (e.target.value)}}/>
                 </div>
