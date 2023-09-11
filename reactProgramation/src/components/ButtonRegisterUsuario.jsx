@@ -5,7 +5,7 @@ const ButtonRegisterUsuario = ({ label, fnRegistrarse }) => {
     <div>
       <button
         onClick={fnRegistrarse}
-        className="btnRegistrarUsuario">Registrarme 
+        className="btnRegistrarUsuario">{label} 
       </button>
     </div>
   );

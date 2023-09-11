@@ -11,6 +11,7 @@ function FormularioLogIn() {
 
   const [usuario, setUsuario] = useState ("");
   const [password, setPassword] = useState ("");
+  const [error, setError] = useState ("");
   const navigate = useNavigate();
   const goToRegisterUsuario = () => {
     navigate("/registerUsuario");
@@ -22,7 +23,7 @@ function FormularioLogIn() {
     console.log("Password: ", password);  
 
     const data = {
-      usuario: UserActivation,
+      usuario: usuario,
       password: password,
     };
 
@@ -58,10 +59,11 @@ function FormularioLogIn() {
                 <div className="input_pass">
                     <h3>Contraseña</h3>
                     <button className="btnOlvido">¿Olvidaste tu contraseña?</button>
-                    <input className="inputs" type="text" placeholder="Ingresa tu contraseña"
+                    <input className="inputs" type="password" placeholder="Ingresa tu contraseña"
                     onChange={(e)=> {setPassword (e.target.value)}}/>
                 </div>
                 <ButtonLogin fnInicioSesion={inicioSesion} label="Ingresar" />
+                {error && <p className='text-red-500'>{error}</p>}
                 <h4>¿Todavía no tienes una cuenta?</h4>
                 <div className="cardCrear">
                     <h4>Crear como:</h4>
