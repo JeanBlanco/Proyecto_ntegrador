@@ -4,6 +4,7 @@ require('dotenv').config()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
+
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
@@ -32,6 +33,7 @@ mongoose.connect(MONGODB_URL,
 app.get('/', (req,res)=>{
     res.send('Wlcome to my API')
 })
+
 
 
 
