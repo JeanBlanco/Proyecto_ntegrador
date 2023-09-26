@@ -1,0 +1,214 @@
+.cardMain{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/image3.png");
+    background-size: 150%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.cardTitulo {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.cardTitulo h1{
+    color: white;
+    font-size: 60px;
+}
+
+.cardInputs {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    background-color: #2d51c725;
+    border: none;
+    border-radius: 8%;
+}
+
+
+.cardOrganizar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card1 h2{
+    padding: 2%;
+    width: 90%;
+    padding: 30px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+    padding-top: 1px;
+    color: white;
+    font-size: 25px;
+}
+
+.card2 {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    margin-left: 70px
+    
+}
+
+.card2 h2{
+    padding: 2%;
+    width: 90%;
+    padding: 30px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+    color: white;
+    font-size: 25px;
+    margin-top: -10px;
+}
+
+.subCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.MiniOrganizar {
+    margin-top: -20px;
+}
+
+.MiniOrganizar h2{
+    width: 307px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+
+.cardButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.cardButton h2 {
+    color: white;
+}
+
+.cardButton .btnRegistrarUsuario {
+    height: 60px;
+    width: 300px;
+    border-radius: 10%;
+    font-size: 30px;
+    margin-top: -50px;
+}
+
+.ingresar {
+    background-color: #1E2126;
+    padding-left: 20px;
+    width: 450px;
+    height: 35px;
+    margin-top: 3px;
+    margin-left: 20px;
+    color: white;
+    font-size: 25px;   
+}
+
+.Tipo_Documento {
+    background-color: #1E2126;
+    padding-left: 20px;
+    width: 260px;
+    height: 35px;
+    margin-top: 3px;
+    margin-left: 20px;
+    color: white;
+    font-size: 25px;
+}
+
+.Genero {
+    background-color: #1E2126;
+    padding-left: 20px;
+    width: 600px;
+    height: 40px;
+    margin-top: 3px;
+    margin-left: 20px;
+    color: white;
+    font-size: 25px;
+}
+
+.ingresarMini {
+    background-color: #1E2126;
+    padding-left: 20px;
+    width: 280px;
+    height: 35px;
+    margin-top: 3px;
+    margin-left: 1px;
+    color: white;
+    font-size: 25px;
+}
+
+.telefono {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    
+}
+
+.telefono h2 {
+    padding: 2%;
+    width: 300px;
+    padding: 30px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+    padding-top: 1px;
+    margin-left: 50px;
+    margin-top: 10px;
+    color: white;
+    font-size: 25px;
+}
+
+.ingresarTelefono {
+    margin-right: 70px;
+    margin-left: 55px;
+    background-color: #1E2126;
+    padding-left: 20px;
+    width: 590px;
+    height: 35px;
+    margin-top: 3px;
+    color: white;
+    font-size: 25px;
+       
+}   
+
+.images {
+    height: 130px;
+}
+
+.ingresar::placeholder{
+    font-size: 25px;
+}
+
+.btnRegistrarUsuario{
+    color: white;
+    background-color: #3969FC;
+}
+
+.btnRegistrarUsuario:hover{
+    background-color: #1f2c55;
+}
