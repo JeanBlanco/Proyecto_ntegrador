@@ -1,6 +1,7 @@
 import './App.css'
 import {Route, Routes} from "react-router-dom";
 import Login from './pages/login';
+import Categorias from './pages/Categorias';
 import RegisterUsuario from './pages/RegisterUsuario';
 import RegisterNegocio from './pages/RegisterNegocio';
 import NavDashboard from "./Components/NavDashboard";
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<PaginaIniciar />} />
       <Route path="/logIn" element={<Login />} />
       <Route path="/dashboard" element={<NavDashboard />} />
+      <Route path="/Categorias" element={<Categorias />} />
       <Route path="/registerUsuario" element={<RegisterUsuario />} />
       <Route path="/registerNegocio" element={<RegisterNegocio />} />
     </Routes>

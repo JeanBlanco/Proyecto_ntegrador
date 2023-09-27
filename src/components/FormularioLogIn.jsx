@@ -39,7 +39,7 @@ function FormularioLogIn() {
         localStorage.setItem("token", resp.data.jwt);
         localStorage.setItem("user", resp.data.user);
         localStorage.setItem("username", resp.data.user.usuario);
-        navigate("/dashboard");
+        navigate("/Categorias");
       })
       .catch((error) => {
         console.log(error);
