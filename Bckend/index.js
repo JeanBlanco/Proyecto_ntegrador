@@ -4,6 +4,8 @@ require('dotenv').config()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
+const UsuarioCliente_Routes = require("./src/routes/UsuarioCliente.router")
+
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}))
@@ -29,11 +31,14 @@ mongoose.connect(MONGODB_URL,
         throw err;
     })
 
-//respuest al servidor
+//respuesta del  servidor
 app.get('/', (req,res)=>{
     res.send('Wlcome to my API')
 })
 
+app.use("/", UsuarioCliente_Routes)
+
+module.exports = app;
 
 
 
