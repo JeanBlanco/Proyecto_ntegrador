@@ -5,7 +5,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const UsuarioCliente_Routes = require("./src/routes/UsuarioCliente.router")
-
+const UsuarioNegocio_Routes = require("./src/routes/UsuarioNegocio.router")
+const Catalogo_Routes = require("./src/routes/Catalogo.router")
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}))
@@ -37,6 +38,9 @@ app.get('/', (req,res)=>{
 })
 
 app.use("/", UsuarioCliente_Routes)
+app.use("/", UsuarioNegocio_Routes)
+app.use("/", Catalogo_Routes)
+
 
 module.exports = app;
 
