@@ -18,7 +18,7 @@ exports.createProfile = async(req, res)=>{
     // Si no hay errores, intentar crear perfil.
     try{
         //obtener los datos del usuario desde el cuerpo de la petición.
-        const {id_usuario, nombre, email, contraseña} = req.body;
+        const {nombre, email, contraseña} = req.body;
 
         let user = await user.findOne({email}); //? verificar si ya el usuario existe un usuariocon ese correo electronico.
 
@@ -30,7 +30,6 @@ exports.createProfile = async(req, res)=>{
 
         user = new UsuarioCliente({
             //? si no existe, crear un nuevo usuario
-            id_usuario,
             nombre,
             email,
             contraseña
@@ -49,5 +48,22 @@ exports.createProfile = async(req, res)=>{
         });
         //*TODO: Si ocurre algún error, se enviará el mensaje anterior.
     };
+}
+
+exports.updateProfile = async(req,res)=>{
+    const {id} = req.params;
+    const {nombre, email, contraseña} = req.body;
+
+    try{
+        const user = await user.findByIdAndUpdate(id,{nombre,email,contraseña},
+            {new: true});
+
+            res.status(200).json(user);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({
+            message: 'Error al actualizar'
+        });
+    }
 }
 
