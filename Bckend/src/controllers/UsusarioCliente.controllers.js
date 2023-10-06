@@ -2,6 +2,17 @@
 const UsuarioCliente = require('../models/UsuarioClientes')
 const {check, validationResult} = require('express-validator')
 
+// obtener usuario
+exports.obtenerUsuarioCliente = async (req, res) =>{
+    try{
+        const usuarioCliente = await UsuarioCliente.findOne({email: req.body.email})
+        res.json(usuarioCliente);
+     } catch (error) {
+        console.error(error.message);
+        res.status(500).send('error del servidor');
+     }
+}
+
 
 //*TODO: creación de función que valida los datos del usuario.
 exports.createProfile = async(req, res)=>{
@@ -49,7 +60,7 @@ exports.createProfile = async(req, res)=>{
         //*TODO: Si ocurre algún error, se enviará el mensaje anterior.
     };
 }
-
+//Actualizar perfil
 exports.updateProfile = async(req,res)=>{
     const {id} = req.params;
     const {nombre, email, contraseña} = req.body;
