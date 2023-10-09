@@ -6,6 +6,7 @@ const UsuarioNegocioSchema = schema({
    direccion: {type: String, required: true},
    email: {type: String, required:true, unique: true},
    descripcion: {type: String, required: true},
+   contraseña: {type: String, required: true},
    calificacionPromedio: {type: Number, default: 0},
    comentarios: [{
     usuarioid: {type: mongoose.Schema.Types.ObjectId, ref: 'UsaurioCliente'},

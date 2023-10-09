@@ -7,10 +7,10 @@ exports.obtenerUsuarioCliente = async (req, res) =>{
     try{
         const usuarioCliente = await UsuarioCliente.findOne({email: req.body.email})
         res.json(usuarioCliente);
-     } catch (error) {
+    } catch (error) {
         console.error(error.message);
         res.status(500).send('error del servidor');
-     }
+    }
 }
 
 
@@ -66,15 +66,23 @@ exports.updateProfile = async(req,res)=>{
     const {nombre, email, contraseña} = req.body;
 
     try{
-        const user = await user.findByIdAndUpdate(id,{nombre,email,contraseña},
-            {new: true});
+        const user = await user.findByIdAndUpdate(id,{nombre,email,contraseña},{new: true});
+        const clienteActualizado = {};
+        if (nombre) clienteActualizado.nombre = nombre;
+        if (email) clienteActualizado.email = email;
+        if (contraseña) clienteActualizado.contraseña = contraseña;
 
-            res.status(200).json(user);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({
-            message: 'Error al actualizar'
-        });
-    }
+        let Cliente = UsuarioCliente.findById(req.params.id);
+
+        // Actualizar las propiedades del negocio existente
+        Object.assign(Cliente, clienteActualizado);
+
+       // Guardar los cambios en la base de datos
+        await negocio.save();
+        res.json(Cliente);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error del servidor');
+        }
 }
 
