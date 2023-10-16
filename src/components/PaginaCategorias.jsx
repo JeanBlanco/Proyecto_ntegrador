@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import logoCategorias from "../assets/logos copia.png";
 import ButtonPerfil from "./ButtonPerfil";
+import ButtonComida from "./ButtonComida";
+import ButtonRopa from "./ButtonRopa";
+import ButtonArtesanias from "./ButtonArtesanias";
+import ButtonTiendas from "./ButtonTiendas";
 import "../styles/Login.css";
 
 
@@ -8,6 +12,18 @@ function PaginaCategorias() {
   const navigate = useNavigate();
   const goToPerfil = () => {
     navigate("/dashboard");
+  };
+  const goToComida = () => {
+    navigate("/Comida");
+  };
+  const goToRopa = () => {
+    navigate("/Ropa");
+  };
+  const goToArtesanias = () => {
+    navigate("/Artesanias");
+  };
+  const goToTiendas = () => {
+    navigate("/Tiendas");
   };
   
   
@@ -22,14 +38,12 @@ function PaginaCategorias() {
     </div>
     <div className="cardGrande">
         <div className="cardIzquierda">
-            <button className="btnElectro">Electrodomésticos</button>
-            <button className="btnFruteria">Fruterías</button>
-            <button className="btnTiendas">Tiendas</button>
+            <ButtonTiendas fnTiendas={goToTiendas}/>
+            <ButtonRopa fnRopa={goToRopa}/>
         </div>
         <div className="cardDerecha">
-            <button className="btnRopa">Ropa</button>
-            <button className="btnComida">Comida</button>
-            <button className="btnArtesanias">Artesanías</button>
+            <ButtonComida fnComida={goToComida}/>
+            <ButtonArtesanias fnArtesanias={goToArtesanias}/>
         </div>
     </div>
 </div>

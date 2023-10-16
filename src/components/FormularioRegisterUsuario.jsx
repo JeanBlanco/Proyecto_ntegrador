@@ -70,11 +70,9 @@ const FormularioRegisterUsuario = () => {
               <h2>Fecha de Nacimiento: </h2>
               <input className="ingresar" type="text" placeholder="Ingresa Tu Fecha de Nacimiento"/>
               
-              <h2>Nombre: </h2>
-              <input className="ingresar" type="text" placeholder="Ingresa tu Nombre" onChange={(e)=> {setName (e.target.value)}}/>
-              <h2>Apellido: </h2>
-              <input className="ingresar" type="text" placeholder="Ingresa tu Apellido" onChange={(e)=> {setLastName (e.target.value)}}/>
-          </div>
+              <h2>Dirección: </h2>
+              <input className="ingresar" type="text" placeholder="Ingresa tu Dirección" onChange={(e)=> {setName (e.target.value)}}/>
+             </div>
 
           <div className="card2">
             <div className="subCard">
@@ -95,6 +93,7 @@ const FormularioRegisterUsuario = () => {
               <div className="MiniOrganizar">
                 <h2>Tipo de Documento: </h2>
                 <select className = "Tipo_Documento" id="Tipo_Documento">
+                <option value="-">-</option>
                 <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
                 <option value="Cédula de Extranjería">Cédula de Extranjería</option>
                 <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
@@ -108,13 +107,12 @@ const FormularioRegisterUsuario = () => {
             </div>
             <h2>Género </h2>
             <select className="Genero" id="Género">
+              <option value="-">-</option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
-              <option value="No especifica">No especifica</option>
+              <option value="No especifica">39 tipos de gay</option>
             </select>
-            <h2>Dirección: </h2>
-            <input className="ingresar" type="text" placeholder="Ingresa Tu Dirección de Residencia"/>
-          </div>
+            </div>
           </div>
           <div className="cardButton">
           <img className="images" src={image7} alt="logo"/>

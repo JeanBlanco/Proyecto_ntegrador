@@ -70,31 +70,22 @@ const FormularioRegisterNegocio = () => {
               <h2>Fecha de  Inauguración: </h2>
               <input className="ingresar" type="text" placeholder="Ingresa Tu Fecha de Nacimiento"/>
               
-              <h2>Nombre: </h2>
+              <h2>Nombre del Propietario: </h2>
               <input className="ingresar" type="text" placeholder="Ingresa tu Nombre" onChange={(e)=> {setName (e.target.value)}}/>
-              <h2>Apellido: </h2>
+              <h2>Apellido del Propietario: </h2>
               <input className="ingresar" type="text" placeholder="Ingresa tu Apellido" onChange={(e)=> {setLastName (e.target.value)}}/>
           </div>
 
           <div className="card2">
-            <div className="subCard">
-              <div className="MiniOrganizar">
-              <h2>Nombre: </h2>
-              <input className="ingresarMini" type="text" placeholder="Ingresa Tu Nombre"/>
-              </div>
-              <div className="MiniOrganizar">
-              <h2>Apellido: </h2>
-              <input className="ingresarMini" type="text" placeholder="Ingresa Tu Apellido"/>
-              </div>
-            </div>
             <div className="telefono">
             <h2>Numero de Teléfono: </h2>
-            <input className="ingresarTelefono" type="text" placeholder="Ingresa Tu Número de Teléfono"/>
+            <input className="ingresarGrande" type="text" placeholder="Ingresa Tu Número de Teléfono"/>
             </div>
             <div className="subCard">
               <div className="MiniOrganizar">
                 <h2>Tipo de Documento: </h2>
                 <select className = "Tipo_Documento" id="Tipo_Documento">
+                <option value="-">-</option>
                 <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
                 <option value="Cédula de Extranjería">Cédula de Extranjería</option>
                 <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
@@ -107,9 +98,9 @@ const FormularioRegisterNegocio = () => {
               </div>
             </div>
             <h2>Registro Único Empresarial </h2>
-            <input className="ingresarMini" type="text" placeholder="Ingresa el RUN"/>
+            <input className="ingresarGrande" type="text" placeholder="Ingresa el RUN"/>
             <h2>Dirección: </h2>
-            <input className="ingresar" type="text" placeholder="Ingresa Tu Dirección de Residencia"/>
+            <input className="ingresarGrande" type="text" placeholder="Ingresa La Dirección del Negocio"/>
           </div>
           </div>
           <div className="cardButton">
