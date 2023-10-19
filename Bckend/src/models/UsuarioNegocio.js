@@ -9,9 +9,9 @@ const UsuarioNegocioSchema = schema({
    contraseña: {type: String, required: true},
    calificacionPromedio: {type: Number, default: 0},
    comentarios: [{
-    usuarioid: {type: mongoose.Schema.Types.ObjectId, ref: 'UsaurioCliente'},
-    comentario: {type: String, required: true},
-    calificacion: {type: Number, required: true}
+      usuarioid: {type: mongoose.Schema.Types.ObjectId, ref: 'UsaurioCliente'},
+      comentario: {type: String, required: true},
+      calificacion: {type: Number, required: true}
    }] 
 })
 

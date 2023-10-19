@@ -25,7 +25,7 @@ exports.createProfileNegocio = async(req, res)=>{
     // Si no hay errores, intentar crear perfil.
     try{
         //obtener los datos del usuario desde el cuerpo de la petición.
-        const {nombre, email, contraseña} = req.body;
+        const {nombre,direccion, email,descripcion, contraseña} = req.body;
 
         let user = await user.findOne({email}); //? verificar si ya el usuario existe un usuariocon ese correo electronico.
 
@@ -39,8 +39,8 @@ exports.createProfileNegocio = async(req, res)=>{
             //? si no existe, crear un nuevo usuario
             nombre,
             direccion,
-            descripcion,
             email,
+            descripcion,
             contraseña
         });
 

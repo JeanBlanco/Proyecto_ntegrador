@@ -1,6 +1,6 @@
 
 const UsuarioCliente = require('../models/UsuarioClientes')
-const {check, validationResult} = require('express-validator')
+const {validationResult} = require('express-validator')
 
 // obtener usuario
 exports.obtenerUsuarioCliente = async (req, res) =>{
