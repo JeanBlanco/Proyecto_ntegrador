@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fuggles&family=Montserrat:wght@200&family=Quicksand&display=swap');
+.PrincipalInicio{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/paginaInicio.png");
+    background-repeat: no-repeat;
+    background-size: 115%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FilaImg {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.logoInicio{
+    height: 400px;
+    width: auto;
+    padding: 0%;
+    margin-top: -100px;
+}
+
+.PrincipalInicio h1 {
+    color: white;
+    margin-top: -135px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+    color: rgb(0, 0, 0);
+}
+
+.btnInicio {
+    height: 70px;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: -50px;
+    padding-bottom: 8px;
+    background-color: rgba(29, 26, 199, 0.39);
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 8%;
+    cursor: pointer;
+}
+
+.btnInicio:hover{
+    background-color: rgba(36, 62, 211, 0.76);
+}

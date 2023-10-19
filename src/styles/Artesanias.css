@@ -1,0 +1,152 @@
+.Principal1{
+    height: 100vh;
+    width: 100vw;
+    border: none;
+    display: flex;
+    background-color:#18181b ;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.cardTotal {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.cardContenido {
+    width: 1000px;
+}
+
+.cardContenido scroll-container {
+    display: block;
+    width: 1000px;
+    height: 89vh;
+    margin-left: 1px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: white;
+}
+
+.cardAdds {
+    width: 350px;
+}
+
+
+nav,
+scroll-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+scroll-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 5em;
+}
+
+.Adds {
+    height: auto;
+    width: 100%;
+}
+
+#cardAdds {
+    -moz-animation: automatizacion 15s infinite linear;
+    -o-animation: automatizacion 15s infinite linear;
+    -webkit-animation: automatizacion 15s infinite linear;
+    animation: automatizacion 15s infinite linear;
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+    width: 357px;
+    height: 89vh;
+}
+#carrusel-contenido {
+    margin: 0 auto;
+    overflow: hidden;
+    text-align:left;
+}
+.imagenes{
+    height: 500px;
+    width: 100%;
+}
+.carrusel-elemento {
+    float: left;
+    width: 33.333%;
+}
+@-moz-keyframes automatizacion {
+    0% {
+        margin-top: 0;
+    }
+    30% {
+        margin-top: 0;
+    }
+    35% {
+        margin-top: -100%;
+    }
+    65% {
+        margin-top: -100%;
+    }
+    70% {
+        margin-top: -200%;
+    }
+    95% {
+        margin-top: -200%;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+@-webkit-keyframes automatizacion {
+    0% {
+        margin-top: 0;
+    }
+    30% {
+        margin-top: 0;
+    }
+    35% {
+        margin-top: -100%;
+    }
+    65% {
+        margin-top: -100%;
+    }
+    70% {
+        margin-top: -200%;
+    }
+    95% {
+        margin-top: -200%;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+@keyframes automatizacion {
+    0% {
+        margin-top: 0;
+    }
+    30% {
+        margin-top: 0;
+    }
+    35% {
+        margin-top: -100%;
+    }
+    65% {
+        margin-top: -100%;
+    }
+    70% {
+        margin-top: -200%;
+    }
+    95% {
+        margin-top: -200%;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
