@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: o;
+    box-sizing: border-box;
+    
+}
+
+.Total {
+    width: 100vw;
+    justify-content: top;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.cardEncabezado1{
+    height: 65px;
+    width: 100vw;
+    background-color:#18181b ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin-top: 5px;
+    padding-inline: 10px;
+    margin-top: 10px;
+}
+
+.cardEncabezado1 h1{
+    color: white;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 60px;
+    margin-left: 180px;
+}
+.cardEncabezado1 h2{
+    color: white;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    padding-right: 60px;
+    margin-left: 5px;
+}
+.cardGrande2 {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.opciones {
+   margin-left: 580px;
+}
+
+#Opciones {
+    width: 40px;
+    color: white;
+    background-color: #8e8e97;
+}
+
+.ImagenPerfil {
+    width: 250px;
+    height: 300px;
+    margin-left: 50px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 100%;
+    margin-top: -300px;
+    margin-left: 100px;
+}
+
+
+.ImagenPortada {
+   width: 100vw;
+   height: auto;
+}
+
+
+.descripcion {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 30px;
+    background-color: aquamarine; 
+}
+.direccion{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 30px;
+}
+
+.slogan {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 30px;
+    margin-top: 15px;
+}
+.cardImagenes {
+    display: flex;
+    flex-direction: row;
+    background-color: #18181b;
+    overflow-x:scroll;
+}
+
+.imagen{
+    margin: 10px;
+    height: 100%;
+    width: auto;
+}
+
+.cardImagenes scroll-container {
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+    margin-left: 1px;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+
+

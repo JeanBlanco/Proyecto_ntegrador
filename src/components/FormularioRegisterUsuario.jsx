@@ -70,9 +70,7 @@ const FormularioRegisterUsuario = () => {
               <h2>Fecha de Nacimiento: </h2>
               <input className="ingresar" type="text" placeholder="Ingresa Tu Fecha de Nacimiento"/>
               
-              <h2>Dirección: </h2>
-              <input className="ingresar" type="text" placeholder="Ingresa tu Dirección" onChange={(e)=> {setName (e.target.value)}}/>
-             </div>
+              </div>
 
           <div className="card2">
             <div className="subCard">

@@ -11,11 +11,9 @@ import publiNike from "../assets/PublicidadNike.png";
 function PaginaRopa() {
   const navigate = useNavigate();
   const goToPerfil = () => {
-    navigate("/dashboard");
+    navigate("/Perfil");
   };
   
-  
-
   return (
     <div className="Principal1">
     <div className="cardEncabezado">

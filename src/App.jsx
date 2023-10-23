@@ -4,7 +4,7 @@ import Login from './pages/login';
 import Categorias from './pages/Categorias';
 import RegisterUsuario from './pages/RegisterUsuario';
 import RegisterNegocio from './pages/RegisterNegocio';
-import NavDashboard from "./Components/NavDashboard";
+import Perfil from './pages/Perfil';
 import PaginaIniciar from './components/PaginaIniciar';
 import Comida from './pages/Comida';
 import Ropa from './pages/Ropa';
@@ -16,7 +16,7 @@ function App() {
     <Routes>
       <Route path="/" element={<PaginaIniciar />} />
       <Route path="/logIn" element={<Login />} />
-      <Route path="/dashboard" element={<NavDashboard />} />
+      <Route path="/Perfil" element={<Perfil />} />
       <Route path="/Categorias" element={<Categorias />} />
       <Route path="/registerUsuario" element={<RegisterUsuario />} />
       <Route path="/registerNegocio" element={<RegisterNegocio />} />

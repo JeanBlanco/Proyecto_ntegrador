@@ -11,8 +11,9 @@ import "../styles/Login.css";
 function PaginaCategorias() {
   const navigate = useNavigate();
   const goToPerfil = () => {
-    navigate("/dashboard");
+    navigate("/Perfil");
   };
+  
   const goToComida = () => {
     navigate("/Comida");
   };
@@ -26,8 +27,6 @@ function PaginaCategorias() {
     navigate("/Tiendas");
   };
   
-  
-
   return (
     <div className="Principal">
     <div className="cardEncabezado">

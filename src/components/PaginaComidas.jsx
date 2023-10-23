@@ -11,11 +11,9 @@ import publiNike from "../assets/PublicidadNike.png";
 function PaginaComida() {
   const navigate = useNavigate();
   const goToPerfil = () => {
-    navigate("/dashboard");
+    navigate("/Perfil");
   };
   
-  
-
   return (
     <div className="Principal1">
     <div className="cardEncabezado">

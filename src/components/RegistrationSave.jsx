@@ -7,7 +7,6 @@ function RegistrationSave() {
     icon: "success",
     confirmButtonText: "Entendido",
   });
-
   return null;
 }
 
