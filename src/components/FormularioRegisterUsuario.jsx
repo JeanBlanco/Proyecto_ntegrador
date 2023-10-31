@@ -50,7 +50,7 @@ const FormularioRegisterUsuario = () => {
         }
       });
   };
-
+  
   return (
     <div className="cardMain">
       <div className="cardTitulo">
@@ -64,7 +64,7 @@ const FormularioRegisterUsuario = () => {
               <h2>E-mail: </h2>
               <input className="ingresar" type="text" placeholder="Ingresa tu Email" onChange={(e)=> {setEmailU (e.target.value)}}/>
               <h2>Contraseña: </h2>
-              <input className="ingresar" type="text" placeholder="Crea tu Contraseña" onChange={(e)=> {setPassword (e.target.value)}}/>
+              <input className="ingresar" type="password" placeholder="Crea tu Contraseña" onChange={(e)=> {setPassword (e.target.value)}}/>
               <h2>Usuario: </h2>
               <input className="ingresar" type="text" placeholder="Crea tu Usuario" onChange={(e)=> {setUser (e.target.value)}}/>
               <h2>Fecha de Nacimiento: </h2>
@@ -76,11 +76,11 @@ const FormularioRegisterUsuario = () => {
             <div className="subCard">
               <div className="MiniOrganizar">
               <h2>Nombre: </h2>
-              <input className="ingresarMini" type="text" placeholder="Ingresa Tu Nombre"/>
+              <input className="ingresarMini" type="text" placeholder="Ingresa Tu Nombre" onChange={(e)=> {setName (e.target.value)}}/>
               </div>
               <div className="MiniOrganizar">
               <h2>Apellido: </h2>
-              <input className="ingresarMini" type="text" placeholder="Ingresa Tu Apellido"/>
+              <input className="ingresarMini" type="text" placeholder="Ingresa Tu Apellido" onChange={(e)=> {setLastName (e.target.value)}}/>
               </div>
             </div>
             <div className="telefono">
@@ -108,7 +108,7 @@ const FormularioRegisterUsuario = () => {
               <option value="-">-</option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
-              <option value="No especifica">39 tipos de gay</option>
+              <option value="No especifica">no especifica</option>
             </select>
             </div>
           </div>

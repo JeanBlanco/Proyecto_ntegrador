@@ -68,8 +68,7 @@ const FormularioRegisterNegocio = () => {
               <h2>Usuario: </h2>
               <input className="ingresar" type="text" placeholder="Crea tu Usuario" onChange={(e)=> {setUser (e.target.value)}}/>
               <h2>Fecha de  Inauguración: </h2>
-              <input className="ingresar" type="text" placeholder="Ingresa Tu Fecha de Nacimiento"/>
-              
+              <input className="ingresar" type="text" placeholder="Ingresa La fecha de inauguración"/>
               <h2>Nombre del Propietario: </h2>
               <input className="ingresar" type="text" placeholder="Ingresa tu Nombre" onChange={(e)=> {setName (e.target.value)}}/>
               <h2>Apellido del Propietario: </h2>

@@ -5,11 +5,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ButtonGoToRegisterUsuario from "./ButtonGoToRegisterUsuario";
 import ButtonGoToRegisterNegocio from "./ButtonGoToRegisterNegocio";
+
+import Swal from "sweetalert2";
 import "../styles/Login.css";
 
 
 function FormularioLogIn() {
-
   const [usuario, setUsuario] = useState ("");
   const [password, setPassword] = useState ("");
   const [error, setError] = useState ("");
@@ -25,7 +26,8 @@ function FormularioLogIn() {
   const inicioSesion = async (e) => {
     e.preventDefault()
     console.log("Usuario: ", usuario)
-    console.log("Password: ", password);  
+    console.log("Password: ", password);
+
 
     const data = {
       usuario: usuario,
@@ -39,11 +41,16 @@ function FormularioLogIn() {
         localStorage.setItem("token", resp.data.jwt);
         localStorage.setItem("user", resp.data.user);
         localStorage.setItem("username", resp.data.user.usuario);
+        localStorage.setItem("nombre", resp.data.user.nombre);
         navigate("/Categorias");
       })
-      .catch((error) => {
-        console.log(error);
-        setError("Usuario o contraseña incorrectos");
+      .catch((err) => {
+        console.log(err);
+        if (err.response.status == 400 || err.response.status == 404) {
+          Swal.fire("Información!", err.response.data.message, "error");
+        } else {
+          Swal.fire("Información!", "Ocurrio un error!", "error");
+        }
       });
   };
 

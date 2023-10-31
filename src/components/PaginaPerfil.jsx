@@ -14,10 +14,8 @@ import "../styles/Perfil.css";
 
 
 function PaginaPerfil() {
-  const usuario = localStorage.getItem("username");
-  const navigate = useNavigate();
-  
-  
+  const usuario = localStorage.getItem("nombre");
+
   return (
     <div className="Total">
     <div className="cardEncabezado1">
@@ -38,7 +36,6 @@ function PaginaPerfil() {
         <label className="descripcion"> Horario de Atención</label>
         <label className="descripcion"> Lunes a Viernes: 7:00 AM -- 8:00 PM </label>
         <label className="descripcion"> Sábados, Domingos y Festivos: 9:00 AM -- 4:00 PM </label>
-        
         <label className="direccion">Tv 39 #73b-95 a 73b-1, Laureles - Estadio, Medellín, Laureles, Medellín, Antioquia</label>
         <a className ="direccion" HREF = "https://www.google.com/maps/place/Caf%C3%A9+Zeppelin/@6.2463377,-75.600114,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44299f7d809b6d:0x86ccf77109148212!8m2!3d6.2463324!4d-75.5975391!16s%2Fg%2F11ckqt10f3?hl=es&entry=ttu">Ver en Maps</a>
         <label className="slogan"> "Trabajamos por ti..." </label>
@@ -55,9 +52,7 @@ function PaginaPerfil() {
                 <img className="imagen"src={imagen7} alt="Imagen"/>
             </scroll-container>
         </div>
-
-        
-        
+  
 
     </div>
 </div>
