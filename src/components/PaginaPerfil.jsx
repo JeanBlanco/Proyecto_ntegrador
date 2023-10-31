@@ -10,25 +10,51 @@ import imagen4 from "../assets/Imagen4.jpg"
 import imagen5 from "../assets/Imagen5.jpg"
 import imagen6 from "../assets/Imagen6.jpg"
 import imagen7 from "../assets/Imagen7.jpg"
+import ButtonAjustes from "./ButtonAjustes";
+import ButtonCerrarSesion from "./ButtonCerrarSesion";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import "../styles/Perfil.css";
 
 
 function PaginaPerfil() {
-  const usuario = localStorage.getItem("nombre");
+  const usuario = localStorage.getItem("username");
+  const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
+  
+  const goToAjustes = () => {
+    navigate("/Ajustes");
+  };
+
+  const pregunta = () => {
+    MySwal.fire({
+     title: `¿Está seguro que desea Cerrar Sesión?`,
+     showCancelButton: true,
+     confirmButtonText: "Si",
+   }).then((result) => {
+       if (result.isConfirmed) {
+         //Accion en caso de que elijan el SI 
+            navigate("/Login");
+       }
+   });
+}
 
   return (
     <div className="Total">
     <div className="cardEncabezado1">
-        <img className="logoCategorias" src={logoCategorias} alt="logoCategorias"/>
-        <h2>{usuario}</h2>
-        <h1>Perfil</h1>
-       <div className="opciones" >
-        <select id="Opciones">
-              <option value="=">=</option>
-              <option value="Ajustes">Ajustes</option>
-              <option value="Cerrar Sesion">Cerrar Sesión</option>
-        </select>
+        <div className="izquierda">
+            <img className="logoCategorias1" src={logoCategorias} alt="logoCategorias1"/>
+            <h2>{usuario}</h2>
         </div>
+        <div className="centro">
+            <h1>Perfil</h1>
+        </div>
+        <div className="derecha">
+            <ButtonAjustes fnAjustes={goToAjustes}/>
+            <ButtonCerrarSesion fnCerrarSesion={pregunta}/>
+            
+        </div>
+        
     </div>
     <div className="cardGrande2">
         <img className="ImagenPortada" src={ImagenPortada} alt="ImagenPortada"/>
@@ -37,7 +63,7 @@ function PaginaPerfil() {
         <label className="descripcion"> Lunes a Viernes: 7:00 AM -- 8:00 PM </label>
         <label className="descripcion"> Sábados, Domingos y Festivos: 9:00 AM -- 4:00 PM </label>
         <label className="direccion">Tv 39 #73b-95 a 73b-1, Laureles - Estadio, Medellín, Laureles, Medellín, Antioquia</label>
-        <a className ="direccion" HREF = "https://www.google.com/maps/place/Caf%C3%A9+Zeppelin/@6.2463377,-75.600114,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44299f7d809b6d:0x86ccf77109148212!8m2!3d6.2463324!4d-75.5975391!16s%2Fg%2F11ckqt10f3?hl=es&entry=ttu">Ver en Maps</a>
+        <a className ="direccion" href = "https://www.google.com/maps/place/Caf%C3%A9+Zeppelin/@6.2463377,-75.600114,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44299f7d809b6d:0x86ccf77109148212!8m2!3d6.2463324!4d-75.5975391!16s%2Fg%2F11ckqt10f3?hl=es&entry=ttu">Ver en Maps</a>
         <label className="slogan"> "Trabajamos por ti..." </label>
         
         <div className="cardImagenes">

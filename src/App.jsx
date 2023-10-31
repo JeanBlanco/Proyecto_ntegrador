@@ -10,6 +10,7 @@ import Comida from './pages/Comida';
 import Ropa from './pages/Ropa';
 import Artesanias from './pages/Artesanias';
 import Tiendas from './pages/Tiendas';
+import Ajustes from './pages/Ajustes';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/Ropa" element={<Ropa />} />
       <Route path="/Artesanias" element={<Artesanias />} />
       <Route path="/Tiendas" element={<Tiendas />} />
+      <Route path="/Ajustes" element={<Ajustes />} />
     </Routes>
   )
 }
