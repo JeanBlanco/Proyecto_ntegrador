@@ -5,19 +5,21 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ButtonGoToRegisterUsuario from "./ButtonGoToRegisterUsuario";
 import ButtonGoToRegisterNegocio from "./ButtonGoToRegisterNegocio";
-
 import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import "../styles/Login.css";
 
 
 function FormularioLogIn() {
   const [usuario, setUsuario] = useState ("");
   const [password, setPassword] = useState ("");
+  const MySwal = withReactContent(Swal);
   const [error, setError] = useState ("");
   const navigate = useNavigate();
   const goToRegisterUsuario = () => {
     navigate("/RegisterUsuario");
   };
+
   
   const goToRegisterNegocio = () => {
     navigate("/RegisterNegocio");
@@ -41,7 +43,7 @@ function FormularioLogIn() {
         localStorage.setItem("token", resp.data.jwt);
         localStorage.setItem("user", resp.data.user);
         localStorage.setItem("username", resp.data.user.usuario);
-        localStorage.setItem("nombre", resp.data.user.nombre);
+        
         navigate("/Categorias");
       })
       .catch((err) => {
@@ -53,6 +55,19 @@ function FormularioLogIn() {
         }
       });
   };
+  
+  const respuesta = () => {
+    MySwal.fire({
+     title: `Lasstima`,
+     showCancelButton: true,
+     confirmButtonText: "OK",
+   }).then((result) => {
+       if (result.isConfirmed) {
+         //Accion en caso de que elijan el SI 
+            navigate("/Login");
+       }
+   });
+}
 
   return (
      <div>
@@ -70,7 +85,7 @@ function FormularioLogIn() {
                 </div>
                 <div className="input_pass">
                     <h3>Contraseña</h3>
-                    <button className="btnOlvido">¿Olvidaste tu contraseña?</button>
+                    <button className="btnOlvido" onClick={respuesta}>¿Olvidaste tu contraseña?</button>
                     <input className="inputs" type="password" placeholder="Ingresa tu contraseña"
                     onChange={(e)=> {setPassword (e.target.value)}}/>
                 </div>
