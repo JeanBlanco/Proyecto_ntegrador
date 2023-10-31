@@ -2,8 +2,10 @@
 const UsuarioCliente = require('../models/UsuarioClientes')
 const {validationResult} = require('express-validator')
 
+const UsuarioClienteControllers = {}
+
 // obtener usuario
-exports.obtenerUsuarioCliente = async (req, res) =>{
+UsuarioClienteControllers.obtenerUsuarioCliente = async (req, res) =>{
     try{
         const usuarioCliente = await UsuarioCliente.findOne({email: req.body.email})
         res.json(usuarioCliente);
@@ -15,7 +17,7 @@ exports.obtenerUsuarioCliente = async (req, res) =>{
 
 
 //*TODO: creación de función que valida los datos del usuario.
-exports.createProfile = async(req, res)=>{
+UsuarioClienteControllers.createProfile = async(req, res)=>{
 
     // Obtener los resultados de la validación. 
     const errors = validationResult(req);
@@ -29,7 +31,7 @@ exports.createProfile = async(req, res)=>{
     // Si no hay errores, intentar crear perfil.
     try{
         //obtener los datos del usuario desde el cuerpo de la petición.
-        const {nombre, email, contraseña} = req.body;
+        const {nombre, email, contraseña, fechaNacimiento,numeroTelefono,  documentoId} = req.body;
 
         let user = await user.findOne({email}); //? verificar si ya el usuario existe un usuariocon ese correo electronico.
 
@@ -43,7 +45,10 @@ exports.createProfile = async(req, res)=>{
             //? si no existe, crear un nuevo usuario
             nombre,
             email,
-            contraseña
+            contraseña,
+            fechaNacimiento,
+            numeroTelefono,
+            documentoId
         });
 
         await user.save(); // guardar el usuario en la base de datos
@@ -54,23 +59,24 @@ exports.createProfile = async(req, res)=>{
         //*TODO: se enviará este mensaje al cuando el registro sea exitoso
     } catch (error){
         console.error(error.message);
-        res.status(500).json({msg:
+        res.status(500).json({mensaje:
             'Error al crear el perfil'
         });
         //*TODO: Si ocurre algún error, se enviará el mensaje anterior.
     };
 }
 //Actualizar perfil
-exports.updateProfile = async(req,res)=>{
+UsuarioClienteControllers.updateProfile = async(req,res)=>{
     const {id} = req.params;
-    const {nombre, email, contraseña} = req.body;
+    const {nombre, email, contraseña, numeroTelefono} = req.body;
 
     try{
-        const user = await user.findByIdAndUpdate(id,{nombre,email,contraseña},{new: true});
+        const user = await user.findByIdAndUpdate(id,{nombre,email,contraseña}, numeroTelefono,{new: true});
         const clienteActualizado = {};
         if (nombre) clienteActualizado.nombre = nombre;
         if (email) clienteActualizado.email = email;
         if (contraseña) clienteActualizado.contraseña = contraseña;
+        if (numeroTelefono) clienteActualizado.numeroTelefono = numeroTelefono; 
 
         let Cliente = UsuarioCliente.findById(req.params.id);
 
@@ -85,4 +91,6 @@ exports.updateProfile = async(req,res)=>{
         res.status(500).send('Error del servidor');
         }
 }
+
+module.exports = UsuarioClienteControllers; 
 
