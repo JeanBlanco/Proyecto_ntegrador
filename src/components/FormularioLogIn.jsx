@@ -58,7 +58,7 @@ function FormularioLogIn() {
   
   const respuesta = () => {
     MySwal.fire({
-     title: `Lasstima`,
+     title: `Soporte se pondrá en contacto contigo`,
      showCancelButton: true,
      confirmButtonText: "OK",
    }).then((result) => {

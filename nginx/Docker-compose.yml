@@ -1,0 +1,8 @@
+version: '3.9'
+services: 
+  littleplace:
+    container_name: medisoft-front
+    build:
+      context: ./
+    ports:
+      - 3271:3271

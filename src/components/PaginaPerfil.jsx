@@ -50,9 +50,7 @@ function PaginaPerfil() {
             <h1>Perfil</h1>
         </div>
         <div className="derecha">
-            <ButtonAjustes fnAjustes={goToAjustes}/>
             <ButtonCerrarSesion fnCerrarSesion={pregunta}/>
-            
         </div>
         
     </div>

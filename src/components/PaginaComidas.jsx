@@ -6,6 +6,7 @@ import publimc from "../assets/publicidadMc.png";
 import publiSpotify from "../assets/publicidadSpotify.png";
 import publi3 from "../assets/Publicidad3.png";
 import publiNike from "../assets/PublicidadNike.png";
+import imagenPerfil1 from "../assets/imagen_cafe_cepelin.png";
 
 
 function PaginaComida() {
@@ -25,8 +26,9 @@ function PaginaComida() {
     <div className="cardTotal">
     <div className="cardContenido">
         <scroll-container>
-            <scroll-page id="page-1">contenido 1</scroll-page>
-            <scroll-page id="page-2">contenido 2</scroll-page>
+            <img src={imagenPerfil1}/>
+            <img src={publiNike}/>
+            <ButtonGoTienda fnPerfil={goToPerfil}/>
             <scroll-page id="page-3">contenido 3</scroll-page>
         </scroll-container>
         </div>
