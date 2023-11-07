@@ -1,5 +1,7 @@
 const UsuarioNegocio = require('../models/UsuarioNegocio')
 const {validationResult} = require('express-validator')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 const  UsuarioNegocioController = {}
 
@@ -16,37 +18,39 @@ UsuarioNegocioController.crearPerfil = async (req, res) =>{
     // Si no hay errores, intentar crear perfil.
     try{
         //obtener los datos del usuario desde el cuerpo de la petición.
-        const {nombre,direccion,email, descripcion,fechaInauguracion,nombrePropetario,apellidoPropetario, numerotelefono,run, nit,contraseña} = req.body;
-
-        let user = await user.findOne({email}); //? verificar si ya el usuario existe un usuariocon ese correo electronico.
+        const {usuario,direccion,email, descripcion,fechaInauguracion,nombrePropetario,apellidoPropetario, numerotelefono,run, nit,contraseña} = req.body;
+        console.log(req.body)
+        let user = await UsuarioNegocio.findOne({email}); //? verificar si ya el usuario existe un usuariocon ese correo electronico.
 
         if (user){
             return res.status(400).json({msg:
             'Ya existe un usuario con ese correo electronico'});
             //*TODO: Si existe, enviar una respuesta con el mensaje anterior
-        }
+        }else{
+            console.log(user)
 
-        user = new UsuarioNegocio({
-            //? si no existe, crear un nuevo usuario
-            nombre,
-            direccion,
-            email,
-            descripcion,
-            fechaInauguracion,
-            nombrePropetario,
-            apellidoPropetario,
-            numerotelefono,
-            run,
-            nit,
-            contraseña
-        });
-
-        await user.save(); // guardar el usuario en la base de datos
-
-        res.status(201).json({
-            msg:'Perfil creado correctamente'
-        });
-        //*TODO: se enviará este mensaje al cuando el registro sea exitoso
+            user = new UsuarioNegocio({
+                //? si no existe, crear un nuevo usuario
+                usuario,
+                direccion,
+                email,
+                descripcion,
+                fechaInauguracion,
+                nombrePropetario,
+                apellidoPropetario,
+                numerotelefono,
+                run,
+                nit,
+                contraseña
+            });
+    
+            await user.save(); // guardar el usuario en la base de datos
+    
+            res.status(201).json({
+                msg:'Perfil creado correctamente'
+            });
+            //*TODO: se enviará este mensaje al cuando el registro sea exitoso
+        } 
     } catch (error){
         console.error(error.message);
         res.status(500).json({mensaje:
@@ -57,6 +61,58 @@ UsuarioNegocioController.crearPerfil = async (req, res) =>{
     
 }
 
+UsuarioNegocioController.iniciarSesion = async (req, res) => {
+    // Obtener el email y la contraseña
+    const email = req.body.email;
+    const contraseña = req.body.contraseña;
+    console.log(req.body)
+
+    // Buscar el usuario por el email
+    try {
+    const usuario = await UsuarioNegocio.findOne({ email: email });
+      // Verificar si el usuario existe o no
+    if (!usuario) {
+        // Enviar una respuesta con un mensaje de error
+        res.status(404).json({
+        mensaje: 'No se encontró el usuario con el email ' + email
+        });
+    } else {
+        // Comparar la contraseña ingresada con la contraseña almacenada
+        try {
+        const result = await bcrypt.compare(contraseña, usuario.contraseña);
+          // Verificar si el resultado de la comparación es verdadero o falso
+        if (!result) {
+            // Enviar una respuesta con un mensaje de error
+            res.status(401).json({
+            mensaje: 'La contraseña es incorrecta'
+            });
+        } else {
+            // Generar un token de autenticación
+            const token = jwt.sign({ usuario: usuario }, 'secret', { expiresIn: '1h' });
+
+            // Enviar una respuesta con el token y el usuario
+            res.status(200).json({
+            mensaje: 'Inicio de sesión exitoso',
+            token: token,
+            usuario: usuario
+            });
+        }
+        } catch (err) {
+          // Manejar el error si ocurre
+        return res.status(500).json({
+            mensaje: 'Error en el servidor',
+            error: err
+        });
+        }
+    }
+    } catch (err) {
+      // Manejar el error si ocurre
+    return res.status(500).json({
+        mensaje: 'Error en el servidor',
+        error: err
+    });
+    }
+};
 
 UsuarioNegocioController.obtenerNegocios = async (req, res) => {
     try {
@@ -70,16 +126,16 @@ UsuarioNegocioController.obtenerNegocios = async (req, res) => {
 
 UsuarioNegocioController.actualizarNegocio = async (req, res) => {
     try {
-        const { nombre, direccion, descripcion,nombrePropetario,apellidoPropetario,numerotelefono,contraseña } = req.body;
+        const { usuario, direccion, descripcion,nombrePropetario,apellidoPropetario,numerotelefono,contraseña } = req.body;
         const negocioActualizado = {};
-        if (nombre) negocioActualizado.nombre = nombre;
+        if (usuario) negocioActualizado.usuario = usuario;
         if (direccion) negocioActualizado.direccion = direccion;
         if (descripcion) negocioActualizado.descripcion = descripcion;
         if (nombrePropetario) negocioActualizado.nombrePropetario = nombrePropetario;
         if (apellidoPropetario) negocioActualizado.apellidoPropetario = apellidoPropetario;
         if (numerotelefono) negocioActualizado.numerotelefono = numerotelefono;
         if (contraseña) negocioActualizado.contraseña = contraseña;
-       
+    
 
         
         let negocio = await UsuarioNegocio.findById(req.params.id);

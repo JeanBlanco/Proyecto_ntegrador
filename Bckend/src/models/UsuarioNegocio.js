@@ -3,7 +3,7 @@ const schema = mongoose.Schema;
 const bcrypt = require('bcrypt')
 
 const UsuarioNegocioSchema = schema({
-   nombre: {type: String, required: true},
+   usuario: {type: String, required: true},
    direccion: {type: String, required: true},
    email: {type: String, required:true, unique: true},
    descripcion: {type: String, required: true},
@@ -25,7 +25,7 @@ const UsuarioNegocioSchema = schema({
 UsuarioNegocioSchema.pre('save', async function(next){
    try{
       const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.has(this.contraseña, salt);
+      const hashedPassword = await bcrypt.hash(this.contraseña, salt);
       this.contraseña = hashedPassword;
       next();  
    }catch (error){
