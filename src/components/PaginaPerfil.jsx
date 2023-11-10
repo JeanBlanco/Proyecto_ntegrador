@@ -15,7 +15,7 @@ import ButtonCerrarSesion from "./ButtonCerrarSesion";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "../styles/Perfil.css";
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import Dropzone from "react-dropzone";
 
   
@@ -25,33 +25,60 @@ function PaginaPerfil() {
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
   
+
   
+  
+
   function UploadFiles() {
     const [uploadedImage, setUploadedImage] = useState(null);
+    let imageSession = sessionStorage.getItem('image');
+    console.log(imageSession);
+   
+    useEffect(() => {
+      setUploadedImage();
+    }, []);
+  
+   
   
     const handleDrop = (acceptedFiles) => {
       const image = acceptedFiles[0];
       setUploadedImage(URL.createObjectURL(image));
+      sessionStorage.setItem("image", URL.createObjectURL(image));
+      console.log(URL.createObjectURL(image));
     };
   
     return (
       <div>
-      <Dropzone onDrop={handleDrop}>
-        {({ getRootProps, getInputProps }) => (
-          <div {...getRootProps()} className="dropzone" placeholder="Arrastra y suelta una imagen aquí, o haz clic para seleccionar una.">
-            <input  {...getInputProps()} />
-            <img className="imgSubir" src={IconoSubir}/>
+        {
+          imageSession == null ?(
+            <Dropzone onDrop={handleDrop}>
+          {({ getRootProps, getInputProps }) => (
+            <div {...getRootProps()} className="dropzone">
+              <input {...getInputProps()} />
+              <img className="imgSubir" src={IconoSubir} alt="Subir archivo" />
+            </div>
+           )}
+          </Dropzone>
+
+          ):(
+            
+              <div className="dropzone">
+                <img className="ImagenPerfil" src={imageSession} alt="Subir archivo" />
+              </div>
+             
+          )
+  }
+          
+        
+        {uploadedImage && (
+          <div>
+            <img className="ImagenPerfil" src={uploadedImage} alt="Imagen de perfil" />
           </div>
         )}
-      </Dropzone>
-      {uploadedImage && (
-        <div>
-            <img  className="ImagenPerfil" src={uploadedImage} />
-        </div>
-      )}
-    </div>
-  );
-}
+      </div>
+    );
+  }
+
 
   const pregunta = () => {
     MySwal.fire({
