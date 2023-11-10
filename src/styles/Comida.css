@@ -25,9 +25,11 @@
     width: 1000px;
     height: 89vh;
     margin-left: 1px;
+    margin-bottom: 5px;
     overflow-y: scroll;
     scroll-behavior: smooth;
     background-color: white;
+    
 }
 
 .cardAdds {

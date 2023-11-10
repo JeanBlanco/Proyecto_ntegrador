@@ -7,6 +7,9 @@ import publiSpotify from "../assets/publicidadSpotify.png";
 import publi3 from "../assets/Publicidad3.png";
 import publiNike from "../assets/PublicidadNike.png";
 import imagenPerfil1 from "../assets/imagen_cafe_cepelin.png";
+import localComida2 from "../assets/localComida2.jpg"
+import localComida3 from "../assets/LocalComida3.jpg"
+import localComida4 from "../assets/localComida4.jpg"
 
 
 function PaginaComida() {
@@ -26,10 +29,10 @@ function PaginaComida() {
     <div className="cardTotal">
     <div className="cardContenido">
         <scroll-container>
-            <img src={imagenPerfil1}/>
-            <img src={publiNike}/>
-            <ButtonGoTienda fnPerfil={goToPerfil}/>
-            <scroll-page id="page-3">contenido 3</scroll-page>
+            <img className="cardContenido" src={imagenPerfil1}/>
+            <img className="cardContenido" src={localComida2}/>
+            <img className="cardContenido" src={localComida3}/>
+            <img className="cardContenido" src={localComida4}/>
         </scroll-container>
         </div>
         <div id="carrusel-contenido">

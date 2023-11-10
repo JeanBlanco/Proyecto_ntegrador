@@ -10,7 +10,7 @@ import imagen4 from "../assets/Imagen4.jpg"
 import imagen5 from "../assets/Imagen5.jpg"
 import imagen6 from "../assets/Imagen6.jpg"
 import imagen7 from "../assets/Imagen7.jpg"
-import ButtonAjustes from "./ButtonAjustes";
+import IconoSubir from "../assets/subirAzul.jpg";
 import ButtonCerrarSesion from "./ButtonCerrarSesion";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -38,15 +38,15 @@ function PaginaPerfil() {
       <div>
       <Dropzone onDrop={handleDrop}>
         {({ getRootProps, getInputProps }) => (
-          <div {...getRootProps()} className="dropzone">
-            <input {...getInputProps()} />
-            <p>Arrastra y suelta una imagen aquí, o haz clic para seleccionar una.</p>
+          <div {...getRootProps()} className="dropzone" placeholder="Arrastra y suelta una imagen aquí, o haz clic para seleccionar una.">
+            <input  {...getInputProps()} />
+            <img className="imgSubir" src={IconoSubir}/>
           </div>
         )}
       </Dropzone>
       {uploadedImage && (
         <div>
-            <img src={uploadedImage} />
+            <img  className="ImagenPerfil" src={uploadedImage} />
         </div>
       )}
     </div>
@@ -82,9 +82,7 @@ function PaginaPerfil() {
         
     </div>
     <div className="cardGrande2">
-        <div className="ImagenPortada">
-            <UploadFiles/>  
-        </div>
+        <img className="ImagenPortada" src={ImagenPortada} alt="ImagenPortada"/>
         <div className="ImagenPerfil">
             <UploadFiles/>
         </div>

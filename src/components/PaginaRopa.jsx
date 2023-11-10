@@ -6,6 +6,10 @@ import publimc from "../assets/publicidadMc.png";
 import publiSpotify from "../assets/publicidadSpotify.png";
 import publi3 from "../assets/Publicidad3.png";
 import publiNike from "../assets/PublicidadNike.png";
+import ropa1 from "../assets/ropa1.jpg";
+import ropa2 from "../assets/ropa2.jpg";
+import ropa3 from "../assets/ropa3.jpg";
+import ropa4 from "../assets/ropa4.jpg";
 
 
 function PaginaRopa() {
@@ -25,9 +29,10 @@ function PaginaRopa() {
     <div className="cardTotal">
     <div className="cardContenido">
         <scroll-container>
-            <scroll-page id="page-1">contenido 1</scroll-page>
-            <scroll-page id="page-2">contenido 2</scroll-page>
-            <scroll-page id="page-3">contenido 3</scroll-page>
+            <img className="cardContenido" src={ropa1}/>
+            <img className="cardContenido" src={ropa2}/>
+            <img className="cardContenido" src={ropa3}/>
+            <img className="cardContenido" src={ropa4}/>
         </scroll-container>
         </div>
         <div id="carrusel-contenido">

@@ -91,12 +91,20 @@
 .ImagenPerfil {
     width: 250px;
     height: 300px;
-    margin-left: 50px;
-    margin-top: 50px;
-    border: none;
+    margin-left: 30px;
+    margin-top: 60px;
+    border: 6px;
+    border-color: aqua;
     border-radius: 100%;
     margin-top: -300px;
     margin-left: 100px;
+    background-color: white;
+}
+
+.imgSubir{
+    width: 150px;
+    height: 150px;
+    margin-left: 120px;
     background-color: white;
 }
 

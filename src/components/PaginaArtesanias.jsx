@@ -6,6 +6,10 @@ import publimc from "../assets/publicidadMc.png";
 import publiSpotify from "../assets/publicidadSpotify.png";
 import publi3 from "../assets/Publicidad3.png";
 import publiNike from "../assets/PublicidadNike.png";
+import arte1 from "../assets/arte1.png";
+import arte2 from "../assets/arte2.jpg";
+import arte3 from "../assets/arte3.webp";
+import arte4 from "../assets/arte4.jpg";
 
 
 function PaginaArtesanias() {
@@ -25,9 +29,10 @@ function PaginaArtesanias() {
     <div className="cardTotal">
     <div className="cardContenido">
         <scroll-container>
-            <scroll-page id="page-1">contenido 1</scroll-page>
-            <scroll-page id="page-2">contenido 2</scroll-page>
-            <scroll-page id="page-3">contenido 3</scroll-page>
+            <img className="cardContenido" src={arte1}/>
+            <img className="cardContenido" src={arte2}/>
+            <img className="cardContenido" src={arte3}/>
+            <img className="cardContenido" src={arte4}/>
         </scroll-container>
         </div>
         <div id="carrusel-contenido">

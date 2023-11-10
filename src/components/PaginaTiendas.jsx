@@ -6,6 +6,10 @@ import publimc from "../assets/publicidadMc.png";
 import publiSpotify from "../assets/publicidadSpotify.png";
 import publi3 from "../assets/Publicidad3.png";
 import publiNike from "../assets/PublicidadNike.png";
+import tienda1 from "../assets/tienda1.avif";
+import tienda2 from "../assets/tienda2.jpeg";
+import tienda3 from "../assets/tienda3.jpg";
+import tienda4 from "../assets/tienda4.jpeg";
 
 
 function PaginaTiendas() {
@@ -25,9 +29,10 @@ function PaginaTiendas() {
     <div className="cardTotal">
     <div className="cardContenido">
         <scroll-container>
-            <scroll-page id="page-1">contenido 1</scroll-page>
-            <scroll-page id="page-2">contenido 2</scroll-page>
-            <scroll-page id="page-3">contenido 3</scroll-page>
+            <img className="cardContenido" src={tienda1}/>
+            <img className="cardContenido" src={tienda2}/>
+            <img className="cardContenido" src={tienda3}/>
+            <img className="cardContenido" src={tienda4}/>
         </scroll-container>
         </div>
         <div id="carrusel-contenido">
