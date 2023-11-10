@@ -1,8 +1,0 @@
-version: "3.8"
-services:
-    catalogo:
-        build:
-            context: ./
-        container_name: catalogo-backend
-        ports:
-            - "4005:4005"
