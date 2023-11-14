@@ -20,9 +20,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 5px;
     padding-inline: 10px;
-    margin-top: 10px;
 }
 
 .izquierda{
@@ -87,6 +85,7 @@
 .cardGrande2 {
     width: 100vw;
     overflow-x: hidden;
+    background-color: rgb(224, 202, 224);
 }
 .ImagenPerfil {
     width: 250px;
@@ -94,18 +93,22 @@
     margin-left: 30px;
     margin-top: 60px;
     border: 6px;
-    border-color: aqua;
     border-radius: 100%;
     margin-top: -300px;
     margin-left: 100px;
     background-color: white;
 }
 
-.imgSubir{
+.imgSubirPerfil{
     width: 150px;
     height: 150px;
-    margin-left: 120px;
+    border: 6px;
+    border-radius: 100%;
     background-color: white;
+}
+.imgSubirPortada{
+    width: 100vw;
+    height: 500px;
 }
 
 
@@ -120,21 +123,27 @@
     place-items: center;
     width: 100vw;
     height: 30px;
-    background-color: rgb(192, 236, 221); 
+    background-color: rgb(224, 202, 224); 
 }
 .direccion{
     display: grid;
     place-items: center;
+    margin-bottom: 10px;
+    text-decoration: none;
     width: 100vw;
     height: 30px;
+    background-color: rgb(224, 202, 224);
 }
+
+
 
 .slogan {
     display: grid;
     place-items: center;
     width: 100vw;
     height: 30px;
-    margin-top: 15px;
+    margin-top: 10px;
+    background-color: rgb(224, 202, 224);
 }
 .cardImagenes {
     display: flex;

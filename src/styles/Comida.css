@@ -29,7 +29,12 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     background-color: white;
-    
+}
+
+.buttonZepelin{
+    width: 1000px;
+    height: 89vh;
+    background-image: url("../assets/imagen_cafe_cepelin.png");
 }
 
 .cardAdds {

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import logoCategorias from "../assets/logos copia.png";
 import ButtonPerfil from "./ButtonPerfil";
+import ButtonZepelin from "./ButtonZepelin";
 import "../styles/Login.css";
 import publimc from "../assets/publicidadMc.png";
 import publiSpotify from "../assets/publicidadSpotify.png";
@@ -17,6 +18,9 @@ function PaginaComida() {
   const goToPerfil = () => {
     navigate("/Perfil");
   };
+  const goToZepelin = () => {
+    navigate("/Perfil");
+  };
   
   return (
     <div className="Principal1">
@@ -29,7 +33,7 @@ function PaginaComida() {
     <div className="cardTotal">
     <div className="cardContenido">
         <scroll-container>
-            <img className="cardContenido" src={imagenPerfil1}/>
+            <ButtonZepelin fnZepelin={goToZepelin}/>
             <img className="cardContenido" src={localComida2}/>
             <img className="cardContenido" src={localComida3}/>
             <img className="cardContenido" src={localComida4}/>
